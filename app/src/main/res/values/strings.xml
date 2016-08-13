@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">facebook challenge</string>
+    <string name="facebook_app_id">883103755129676</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>

@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "309026882172",
+    "firebase_url": "https://facebook-challenge-217e9.firebaseio.com",
+    "project_id": "facebook-challenge-217e9",
+    "storage_bucket": "facebook-challenge-217e9.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:309026882172:android:3f0098a0183169d6",
+        "android_client_info": {
+          "package_name": "com.example.hptouchsmart.facebookchallenge"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "309026882172-69a07o67em63e3rt99rfq544tmfughdp.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.hptouchsmart.facebookchallenge",
+            "certificate_hash": "56AD103F1F93C9FD0749FBB41534241A7277B65F"
+          }
+        },
+        {
+          "client_id": "309026882172-esrnj1ond95dja63u9iuic3r263j1q72.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBNoMfnKYMk0DyIHLtb9NNWFjH6PJWwoFc"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "309026882172-esrnj1ond95dja63u9iuic3r263j1q72.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
