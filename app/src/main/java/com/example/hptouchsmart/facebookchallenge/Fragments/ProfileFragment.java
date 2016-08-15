@@ -1,4 +1,4 @@
-package com.example.hptouchsmart.facebookchallenge;
+package com.example.hptouchsmart.facebookchallenge.Fragments;
 
 
 import android.os.Bundle;
@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
+import com.example.hptouchsmart.facebookchallenge.R;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.squareup.picasso.Picasso;
