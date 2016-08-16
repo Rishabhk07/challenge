@@ -7,6 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.widget.Toast;
 
+import com.example.hptouchsmart.facebookchallenge.Models.Users;
 import com.facebook.AccessToken;
 import com.facebook.AccessTokenTracker;
 import com.facebook.CallbackManager;
@@ -25,6 +26,8 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FacebookAuthProvider;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -180,6 +183,10 @@ public class MainActivity extends AppCompatActivity {
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         Log.d("TAG" , "Sign in with credentials complete !");
 
+                        FirebaseUser firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
+                        Users user =  new Users(firebaseUser.getUid(), firebaseUser.getDisplayName() , "" , firebaseUser.getEmail(), "" , "5" , "rishabhk"  );
+                        DatabaseReference mdatabase = FirebaseDatabase.getInstance().getReference();
+                        mdatabase.child("user").child(firebaseUser.getUid()).setValue(user);
 
                         Intent i = new Intent(MainActivity.this , UserLoginActivity.class);
                         startActivity(i);
