@@ -1,9 +1,13 @@
 package com.example.hptouchsmart.facebookchallenge;
 
 import android.content.Intent;
+import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager;
+import android.content.pm.Signature;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Base64;
 import android.util.Log;
 import android.widget.Toast;
 
@@ -29,6 +33,9 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
+
 public class MainActivity extends AppCompatActivity {
 
     LoginButton loginButton ;
@@ -50,7 +57,6 @@ public class MainActivity extends AppCompatActivity {
         FacebookSdk.sdkInitialize(getApplicationContext());
          setContentView(R.layout.activity_main);
 
-
         AppEventsLogger.activateApp(this);
 
         loginButton = (LoginButton) findViewById(R.id.login_button);
@@ -68,6 +74,7 @@ public class MainActivity extends AppCompatActivity {
 
                 Toast.makeText(MainActivity.this, "welcome "+name, Toast.LENGTH_SHORT).show();
                 Log.d(TAG_reg , "OnSuccess Called");
+
 
                 handleFacebookAccessToken(loginResult.getAccessToken());
             }
@@ -109,31 +116,31 @@ public class MainActivity extends AppCompatActivity {
         };
 
 
-//        accessTokenTracker = new AccessTokenTracker() {
-//            @Override
-//            protected void onCurrentAccessTokenChanged(AccessToken oldAccessToken, AccessToken currentAccessToken) {
-//                accessToken = currentAccessToken;
-//            }
-//        };
-//
-//        accessToken = AccessToken.getCurrentAccessToken(); accessTokenTracker = new AccessTokenTracker() {
-//            @Override
-//            protected void onCurrentAccessTokenChanged(AccessToken oldAccessToken, AccessToken currentAccessToken) {
-//                accessToken = currentAccessToken;
-//                Log.d(TAG_Access_Tracker , "Access token Called");
-//            }
-//        };
-//
-//        accessToken = AccessToken.getCurrentAccessToken();
-//
-//
-//        profileTracker = new ProfileTracker() {
-//            @Override
-//            protected void onCurrentProfileChanged(Profile oldProfile, Profile currentProfile) {
-//                profile = currentProfile;
-//                Log.d(TAG_Profile_TRacker , "Profile tracker called");
-//            }
-//        };
+        accessTokenTracker = new AccessTokenTracker() {
+            @Override
+            protected void onCurrentAccessTokenChanged(AccessToken oldAccessToken, AccessToken currentAccessToken) {
+                accessToken = currentAccessToken;
+            }
+        };
+
+        accessToken = AccessToken.getCurrentAccessToken(); accessTokenTracker = new AccessTokenTracker() {
+            @Override
+            protected void onCurrentAccessTokenChanged(AccessToken oldAccessToken, AccessToken currentAccessToken) {
+                accessToken = currentAccessToken;
+                Log.d(TAG_Access_Tracker , "Access token Called");
+            }
+        };
+
+        accessToken = AccessToken.getCurrentAccessToken();
+
+
+        profileTracker = new ProfileTracker() {
+            @Override
+            protected void onCurrentProfileChanged(Profile oldProfile, Profile currentProfile) {
+                profile = currentProfile;
+                Log.d(TAG_Profile_TRacker , "Profile tracker called");
+            }
+        };
 
 
 
@@ -149,16 +156,16 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
-////        accessTokenTracker.startTracking();
-//        profileTracker.startTracking();
+        accessTokenTracker.startTracking();
+        profileTracker.startTracking();
 
     }
 
     @Override
     protected void onPause() {
         super.onPause();
-//        accessTokenTracker.stopTracking();
-//        profileTracker.stopTracking();
+        accessTokenTracker.stopTracking();
+        profileTracker.stopTracking();
 
     }
 
@@ -182,7 +189,7 @@ public class MainActivity extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         Log.d("TAG" , "Sign in with credentials complete !");
-
+                        
                         FirebaseUser firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
                         Users user =  new Users(firebaseUser.getUid(), firebaseUser.getDisplayName() , "" , firebaseUser.getEmail(), "" , "5" , "rishabhk"  );
                         DatabaseReference mdatabase = FirebaseDatabase.getInstance().getReference();
@@ -195,7 +202,6 @@ public class MainActivity extends AppCompatActivity {
 
                         if(!task.isSuccessful()){
                             Toast.makeText(MainActivity.this, "Authentication Failed ", Toast.LENGTH_SHORT).show();
-
 
                         }
 

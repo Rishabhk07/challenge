@@ -3,33 +3,35 @@ package com.example.hptouchsmart.facebookchallenge.Models;
 /**
  * Created by hp TouchSmart on 8/16/2016.
  */
-public class Users {
+public class Users{
 
 
     String uid;
-    String firstNAME ;
-    String lastName;
+    String name;
     String email;
     String created_at_timestamp;
     String friend_count;
     String username;
 
-    public Users() {
 
-    }
 
     public Users(String uid,
-                 String firstNAME, String lastName,
+                 String name,
                  String email, String created_at_timestamp,
-                 String friend_count, String username) {
+                 String friend_count, String username ) {
         this.uid = uid;
-        this.firstNAME = firstNAME;
-        this.lastName = lastName;
+        this.name = name;
         this.email = email;
         this.created_at_timestamp = created_at_timestamp;
         this.friend_count = friend_count;
         this.username = username;
+
+
     }
+
+
+
+
 
     public String getUid() {
         return uid;
@@ -39,20 +41,12 @@ public class Users {
         this.uid = uid;
     }
 
-    public String getFirstNAME() {
-        return firstNAME;
+    public String getName() {
+        return name;
     }
 
-    public void setFirstNAME(String firstNAME) {
-        this.firstNAME = firstNAME;
-    }
-
-    public String getLastName() {
-        return lastName;
-    }
-
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getEmail() {
@@ -86,6 +80,11 @@ public class Users {
     public void setUsername(String username) {
         this.username = username;
     }
+
 }
+
+
+
+
 
 
