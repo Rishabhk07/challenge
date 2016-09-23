@@ -4,12 +4,17 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 
 import com.aurelhubert.ahbottomnavigation.AHBottomNavigation;
 import com.aurelhubert.ahbottomnavigation.AHBottomNavigationItem;
 import com.example.hptouchsmart.facebookchallenge.Fragments.ProfileFragment;
 import com.example.hptouchsmart.facebookchallenge.Fragments.TopicFragment;
 import com.example.hptouchsmart.facebookchallenge.Fragments.challengeFragment;
+import com.facebook.AccessToken;
+import com.facebook.GraphRequest;
+import com.facebook.GraphResponse;
+import com.facebook.HttpMethod;
 
 public class UserLoginActivity extends AppCompatActivity {
 
@@ -75,5 +80,21 @@ public class UserLoginActivity extends AppCompatActivity {
 
             }
         });
+
+
+//        Bundle parameters = new Bundle();
+//        parameters.putString("type" ,"tagged");
+//        new GraphRequest(
+//                AccessToken.getCurrentAccessToken(),
+//                "/me/photos" ,
+//                null,
+//                HttpMethod.GET,
+//                new GraphRequest.Callback() {
+//                    public void onCompleted(GraphResponse response) {
+//                        Log.d("TAG: graph call " , response.toString());
+//                    }
+//                }
+//        ).executeAsync();
+
     }
 }

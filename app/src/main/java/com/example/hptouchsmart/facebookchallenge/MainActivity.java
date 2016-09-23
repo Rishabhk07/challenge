@@ -47,6 +47,9 @@ public class MainActivity extends AppCompatActivity {
     private FirebaseAuth mAuth;
     private FirebaseAuth.AuthStateListener mAuthListner;
 
+
+
+
     public static final String TAG_reg = "Register Callback";
     public static final String TAG_Access_Tracker = "Access Token Tracker";
     public static final String TAG_Profile_TRacker = "Profile token";
@@ -62,7 +65,7 @@ public class MainActivity extends AppCompatActivity {
         loginButton = (LoginButton) findViewById(R.id.login_button);
         mAuth = FirebaseAuth.getInstance();
 
-        loginButton.setReadPermissions("user_friends","email");
+        loginButton.setReadPermissions("user_friends","email","user_photos");
 
         callbackManager = CallbackManager.Factory.create();
 
@@ -70,6 +73,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onSuccess(LoginResult loginResult) {
                 profile = Profile.getCurrentProfile();
+
                 String name = profile.getName();
 
                 Toast.makeText(MainActivity.this, "welcome "+name, Toast.LENGTH_SHORT).show();

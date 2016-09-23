@@ -74,9 +74,10 @@
                 android:padding="20dp"
                 android:background="#fff"
                 android:clickable="true"
-                android:text="click a selfie with make up "
-                />
+                android:text="click a selfie with make up "></TextView>
         </LinearLayout>
+
+
 
 
 
