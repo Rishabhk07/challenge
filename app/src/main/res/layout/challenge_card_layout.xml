@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    >
+    
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:elevation="4dp"
+        >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <com.mikhaellopez.circularimageview.CircularImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                app:civ_border_color="#EEEEEE"
+                app:civ_border_width="4dp"
+                app:civ_shadow="true"
+                app:civ_shadow_radius="10"
+                app:civ_shadow_color="#8BC34A"
+                android:layout_margin="10dp"
+                android:id="@+id/circular_iv_left"
+                android:src="@drawable/user"
+                android:background="#333"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:layout_toRightOf="@id/circular_iv_left"
+                android:layout_margin="5dp"
+                android:text="you challenged Rishabh khanna"
+                android:typeface="sans"
+                android:id="@+id/challenge_heading"
+                android:layout_marginTop="10dp"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                android:text="click a selfie with krk"
+                android:id="@+id/textView"
+                android:layout_below="@+id/challenge_heading"
+                android:layout_alignStart="@+id/challenge_heading"
+                android:layout_marginStart="45dp" />
+
+        </RelativeLayout>
+
+    </android.support.v7.widget.CardView>
+
+</LinearLayout>

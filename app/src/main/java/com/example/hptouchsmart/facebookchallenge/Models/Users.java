@@ -10,7 +10,6 @@ public class Users{
     String name;
     String email;
     String created_at_timestamp;
-    String friend_count;
     String username;
 
 
@@ -23,7 +22,6 @@ public class Users{
         this.name = name;
         this.email = email;
         this.created_at_timestamp = created_at_timestamp;
-        this.friend_count = friend_count;
         this.username = username;
 
 
@@ -63,14 +61,6 @@ public class Users{
 
     public void setCreated_at_timestamp(String created_at_timestamp) {
         this.created_at_timestamp = created_at_timestamp;
-    }
-
-    public String getFriend_count() {
-        return friend_count;
-    }
-
-    public void setFriend_count(String friend_count) {
-        this.friend_count = friend_count;
     }
 
     public String getUsername() {

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:elevation="4dp"
+    android:layout_margin="15dp"
+    >
+
+    <com.mikhaellopez.circularimageview.CircularImageView
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_margin="10dp"
+        android:id="@+id/circularImageViewFriends"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+        android:text="Rishabh Khanna"
+        android:layout_margin="20dp"
+        android:layout_gravity="center"
+        android:id="@+id/friend_name" />
+
+</LinearLayout>

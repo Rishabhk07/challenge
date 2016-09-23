@@ -38,6 +38,7 @@ dependencies {
     compile 'com.google.firebase:firebase-storage:9.4.0'
     compile 'com.squareup.picasso:picasso:2.5.2'
     compile 'com.aurelhubert:ahbottomnavigation:1.3.3'
+    compile 'com.mikhaellopez:circularimageview:3.0.2'
 
     // Single target that includes all FirebaseUI libraries
     compile 'com.firebaseui:firebase-ui:0.5.3'

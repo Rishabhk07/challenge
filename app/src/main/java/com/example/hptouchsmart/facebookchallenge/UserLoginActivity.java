@@ -39,7 +39,7 @@ public class UserLoginActivity extends AppCompatActivity {
         AHBottomNavigationItem item1 = new AHBottomNavigationItem("Feed" , R.drawable.activity , R.color.colorPrimaryDark);
         AHBottomNavigationItem item2 = new AHBottomNavigationItem("User" , R.drawable.user , R.color.colorPrimary);
         AHBottomNavigationItem item3 = new AHBottomNavigationItem("Topics" , R.drawable.topics, R.color.colorAccent);
-        AHBottomNavigationItem item4 = new AHBottomNavigationItem("challenges" , R.drawable.trophy , R.color.colorBottomNavigationNotification);
+        AHBottomNavigationItem item4 = new AHBottomNavigationItem("Challenges" , R.drawable.trophy , R.color.colorBottomNavigationNotification);
 
         ahBottomNavigation.addItem(item1);
         ahBottomNavigation.addItem(item2);

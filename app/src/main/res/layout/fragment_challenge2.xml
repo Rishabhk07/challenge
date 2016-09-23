@@ -4,12 +4,11 @@
     android:layout_height="match_parent"
     tools:context="com.example.hptouchsmart.facebookchallenge.Fragments.challengeFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <android.support.v7.widget.RecyclerView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/recyclerChallenge"
-        >
-    </android.support.v7.widget.RecyclerView>
+  <ListView
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:id="@+id/challenge_lv"
+      >
+  </ListView>
 
 </FrameLayout>

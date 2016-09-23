@@ -30,8 +30,11 @@
             android:value="@string/facebook_app_id" />
         "
         <activity android:name=".UserLoginActivity" />
-        <activity android:name=".DialogActivity"
-            android:theme="@android:style/Theme.Material.Dialog"></activity>
+        <activity
+            android:name=".DialogActivity"
+            android:theme="@android:style/Theme.Material.Dialog" />
+        <activity android:name=".friend_challenge"
+            android:theme="@style/Theme.Transparent"></activity>
     </application>
 
 </manifest>
