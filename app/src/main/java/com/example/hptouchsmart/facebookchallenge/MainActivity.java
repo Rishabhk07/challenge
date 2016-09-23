@@ -191,7 +191,7 @@ public class MainActivity extends AppCompatActivity {
                         Log.d("TAG" , "Sign in with credentials complete !");
                         
                         FirebaseUser firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
-                        Users user =  new Users(firebaseUser.getUid(), firebaseUser.getDisplayName() , "" , firebaseUser.getEmail(), "" , "5" , "rishabhk"  );
+                        Users user =  new Users(firebaseUser.getUid(), firebaseUser.getDisplayName()  , firebaseUser.getEmail(), "" , "" , ""  );
                         DatabaseReference mdatabase = FirebaseDatabase.getInstance().getReference();
                         mdatabase.child("user").child(firebaseUser.getUid()).setValue(user);
 

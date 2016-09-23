@@ -8,6 +8,7 @@ import android.support.v7.app.AppCompatActivity;
 import com.aurelhubert.ahbottomnavigation.AHBottomNavigation;
 import com.aurelhubert.ahbottomnavigation.AHBottomNavigationItem;
 import com.example.hptouchsmart.facebookchallenge.Fragments.ProfileFragment;
+import com.example.hptouchsmart.facebookchallenge.Fragments.TopicFragment;
 import com.example.hptouchsmart.facebookchallenge.Fragments.challengeFragment;
 
 public class UserLoginActivity extends AppCompatActivity {
@@ -20,6 +21,8 @@ public class UserLoginActivity extends AppCompatActivity {
         setContentView(R.layout.activity_user_login);
         final ProfileFragment profileFragment = new ProfileFragment();
         final challengeFragment challengeFragment = new challengeFragment();
+        final TopicFragment topicFragment = new TopicFragment();
+
         final FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
         fragmentTransaction.replace(R.id.frameReplace , profileFragment , null);
         fragmentTransaction.commit();
@@ -53,7 +56,7 @@ public class UserLoginActivity extends AppCompatActivity {
                         newFragTRans.replace(R.id.frameReplace , profileFragment , null);
                         break;
                     case 2:
-                        newFragTRans.replace(R.id.frameReplace , challengeFragment , null);
+                        newFragTRans.replace(R.id.frameReplace , topicFragment , null);
                         break;
                     case 3:
 
